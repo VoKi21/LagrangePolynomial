@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be3b6cc3-69fd-4967-86e7-ab87ba76a2fc" name="Changes" comment="Copied content from kv1tr4vn/CGVSU repository - javafx window can be drawn now">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="be3b6cc3-69fd-4967-86e7-ab87ba76a2fc" name="Changes" comment="Changed window size and classes names">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialDrawer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LagrangePolynomial.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/ProtoCurveApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/ProtoCurveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cgvsu/protocurvefxapp/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cgvsu/protocurvefxapp/mainwindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/protocurvefxapp/LagrangePolynomialController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,7 +76,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697404628190</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed window size and classes names">
+      <option name="closed" value="true" />
+      <created>1697406590611</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697406590611</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,7 +101,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Copied content from kv1tr4vn/CGVSU repository - javafx window can be drawn now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Copied content from kv1tr4vn/CGVSU repository - javafx window can be drawn now" />
+    <MESSAGE value="Changed window size and classes names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed window size and classes names" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -16,34 +16,44 @@ public class LagrangePolynomialController {
     @FXML
     private Canvas canvas;
 
-    ArrayList<Point2D> points = new ArrayList<Point2D>();
+    ArrayList<Point2D> points = new ArrayList<>();
 
     @FXML
     private void initialize() {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
 
-        System.out.println(canvas.getWidth() + " " + canvas.getHeight());
-
         canvas.setOnMouseClicked(event -> {
             switch (event.getButton()) {
-                case PRIMARY -> handlePrimaryClick(canvas.getGraphicsContext2D(), event);
+                case PRIMARY -> handlePrimaryClick(event);
+                case SECONDARY -> handleSecondaryClick(event);
             }
+            redraw(canvas.getGraphicsContext2D());
         });
     }
 
-    private void handlePrimaryClick(GraphicsContext graphicsContext, MouseEvent event) {
+    private void handlePrimaryClick(MouseEvent event) {
+        final Point2D clickPoint = new Point2D(event.getX(), event.getY());
+        points.add(clickPoint);
+    }
+
+    private void handleSecondaryClick(MouseEvent event) {
         final Point2D clickPoint = new Point2D(event.getX(), event.getY());
 
-        final int POINT_RADIUS = 3;
-        graphicsContext.fillOval(
-                clickPoint.getX() - POINT_RADIUS, clickPoint.getY() - POINT_RADIUS,
-                2 * POINT_RADIUS, 2 * POINT_RADIUS);
+        final int DELETE_RADIUS = 10;
 
-        if (points.size() > 0) {
-            final Point2D lastPoint = points.get(points.size() - 1);
-            graphicsContext.strokeLine(lastPoint.getX(), lastPoint.getY(), clickPoint.getX(), clickPoint.getY());
+        points.removeIf(point -> Math.abs(point.getX() - clickPoint.getX()) <= DELETE_RADIUS && Math.abs(point.getY() - clickPoint.getY()) <= DELETE_RADIUS);
+    }
+
+    private void redraw(GraphicsContext graphicsContext) {
+        graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+        final int POINT_RADIUS = 3;
+        LagrangePolynomialDrawer.drawInterpolation(points, canvas.getGraphicsContext2D());
+        for (Point2D point : points) {
+            graphicsContext.fillOval(
+                    point.getX() - POINT_RADIUS, point.getY() - POINT_RADIUS,
+                    2 * POINT_RADIUS, 2 * POINT_RADIUS);
         }
-        points.add(clickPoint);
     }
 }
