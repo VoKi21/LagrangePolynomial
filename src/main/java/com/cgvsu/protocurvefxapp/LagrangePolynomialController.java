@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
@@ -49,7 +50,8 @@ public class LagrangePolynomialController {
         graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         final int POINT_RADIUS = 3;
-        LagrangePolynomialDrawer.drawInterpolation(points, canvas.getGraphicsContext2D());
+        LagrangePolynomialDrawer.drawInterpolation(points, canvas.getGraphicsContext2D(), Color.BLUE, Color.RED);
+        graphicsContext.setFill(Color.BLACK);
         for (Point2D point : points) {
             graphicsContext.fillOval(
                     point.getX() - POINT_RADIUS, point.getY() - POINT_RADIUS,
