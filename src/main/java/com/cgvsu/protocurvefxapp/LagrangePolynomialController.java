@@ -50,7 +50,7 @@ public class LagrangePolynomialController {
         graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         final int POINT_RADIUS = 3;
-        LagrangePolynomialDrawer.drawInterpolation(points, canvas.getGraphicsContext2D(), Color.BLUE, Color.RED);
+        LagrangePolynomialPainter.drawInterpolation(points, canvas.getGraphicsContext2D(), Color.BLUE, Color.RED);
         graphicsContext.setFill(Color.BLACK);
         for (Point2D point : points) {
             graphicsContext.fillOval(

@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 
 import java.util.List;
 
-public class LagrangePolynomialDrawer {
+public class LagrangePolynomialPainter {
     public static void drawInterpolation(
             List<Point2D> points,
             GraphicsContext graphicsContext,
@@ -44,7 +44,7 @@ public class LagrangePolynomialDrawer {
                     startColor.getOpacity() - colorShift[3] * currentPart
             );
             graphicsContext.setFill(currentColor);
-            graphicsContext.fillOval(x - WIDTH, y - WIDTH, WIDTH * 2, WIDTH * 2);
+            graphicsContext.fillRect(x - WIDTH, y - WIDTH, WIDTH * 2, WIDTH * 2);
         }
     }
 
