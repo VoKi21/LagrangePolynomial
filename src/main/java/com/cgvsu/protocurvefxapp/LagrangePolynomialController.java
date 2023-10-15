@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.util.ArrayList;
 
-public class ProtoCurveController {
+public class LagrangePolynomialController {
 
     @FXML
     AnchorPane anchorPane;
@@ -22,6 +22,8 @@ public class ProtoCurveController {
     private void initialize() {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
+
+        System.out.println(canvas.getWidth() + " " + canvas.getHeight());
 
         canvas.setOnMouseClicked(event -> {
             switch (event.getButton()) {
