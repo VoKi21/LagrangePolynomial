@@ -12,7 +12,7 @@ public class LagrangePolynomialApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LagrangePolynomialApplication.class.getResource("mainwindow.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 2880, 16200);
-        stage.setTitle("Proto Curve App");
+        stage.setTitle("Lagrange Polynomial Curve Painter");
         stage.setScene(scene);
         stage.show();
     }
