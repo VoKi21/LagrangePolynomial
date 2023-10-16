@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class LagrangePolynomialController {
 
     @FXML
-    AnchorPane anchorPane;
+    private AnchorPane anchorPane;
     @FXML
     private Canvas canvas;
 
