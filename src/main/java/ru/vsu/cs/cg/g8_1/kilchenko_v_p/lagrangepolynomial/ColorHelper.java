@@ -3,8 +3,8 @@ package ru.vsu.cs.cg.g8_1.kilchenko_v_p.lagrangepolynomial;
 import javafx.scene.paint.Color;
 
 public class ColorHelper {
-    private Color startColor;
-    private double[] colorShift;
+    private final Color startColor;
+    private final double[] colorShift;
 
     public ColorHelper(Color startColor, Color endColor) {
         this.startColor = startColor;

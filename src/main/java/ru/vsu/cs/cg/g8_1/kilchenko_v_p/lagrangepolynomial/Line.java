@@ -5,26 +5,44 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Line {
+    private static int normalize(int n) {
+        return Math.max(Math.min(n, 3000), -1);
+    }
     public static void lineFromTo(Point2D from, Point2D to, Color startColor, Color endColor, GraphicsContext graphicsContext) {
-        int dx = (int) Math.abs(from.getX() - to.getX());
-        int dy = (int) Math.abs(from.getY() - to.getY());
-        int error = 0;
-        int derror = dy + 1;
-        int y = (int) from.getY();
-        final int WIDTH = 1;
-        int diry = (int) Math.signum(to.getY() - from.getY());
-        final int STEP = 1;
+        int x0 = normalize((int) from.getX());
+        int y0 = normalize((int) from.getY());
+        int x1 = normalize((int) to.getX());
+        int y1 = normalize((int) to.getY());
+
+        int dx = Math.abs(x1 - x0);
+        int dy = Math.abs(y1 - y0);
+
+        int sx = (x0 < x1) ? 1 : -1;
+        int sy = (y0 < y1) ? 1 : -1;
+
+        int error = dx - dy;
+
         final ColorHelper colorHelper = new ColorHelper(startColor, endColor);
-        for (int x = (int) from.getX(); x <= to.getX(); x += STEP) {
-            double currentPart = Math.abs(x - from.getX()) / Math.abs(to.getX() - from.getX());
+
+        while (true) {
+            double currentPart = Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2)) / Math.sqrt(Math.pow(x1 - x0, 2) + Math.pow(y0 - y1, 2));
             Color currentColor = colorHelper.getColorInPoint(currentPart);
-            //graphicsContext.setFill(currentColor);
-            graphicsContext.getPixelWriter().setColor(x, y, currentColor);
-            //graphicsContext.fillRect(x - WIDTH, y - WIDTH, WIDTH * 2, WIDTH * 2);
-            error += derror;
-            if (error >= dx + 1) {
-                y += diry;
-                error -= dx + 1;
+            graphicsContext.getPixelWriter().setColor(x0, y0, currentColor);
+
+            if (x0 == x1 && y0 == y1) {
+                break;
+            }
+
+            int error2 = 2 * error;
+
+            if (error2 > -dy) {
+                error -= dy;
+                x0 += sx;
+            }
+
+            if (error2 < dx) {
+                error += dx;
+                y0 += sy;
             }
         }
     }

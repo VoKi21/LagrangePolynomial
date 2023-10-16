@@ -36,11 +36,7 @@ public class LagrangePolynomialPainter {
             Color currentColor = colorHelper.getColorInPoint(currentPart);
             graphicsContext.setFill(currentColor);
             Line.lineFromTo(prevPoint, new Point2D(x, y), prevColor, currentColor, graphicsContext);
-            Line.lineFromTo(new Point2D(1000, 1000), prevPoint, prevColor, currentColor, graphicsContext);
-            System.out.println((prevPoint.getX() - x) + " " + (prevPoint.getY() - y));
-            prevPoint = new Point2D(x, y);
             prevColor = currentColor;
-            //graphicsContext.fillRect(x - WIDTH, y - WIDTH, WIDTH * 2, WIDTH * 2);
         }
     }
 
