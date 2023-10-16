@@ -1,4 +1,4 @@
-package com.cgvsu.protocurvefxapp;
+package ru.vsu.cs.cg.g8_1.kilchenko_v_p.lagrangepolynomial;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
