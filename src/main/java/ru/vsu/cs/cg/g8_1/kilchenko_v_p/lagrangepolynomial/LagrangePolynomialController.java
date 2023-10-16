@@ -17,7 +17,7 @@ public class LagrangePolynomialController {
     @FXML
     private Canvas canvas;
 
-    ArrayList<Point2D> points = new ArrayList<>();
+    private final ArrayList<Point2D> points = new ArrayList<>();
 
     @FXML
     private void initialize() {
