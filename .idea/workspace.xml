@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be3b6cc3-69fd-4967-86e7-ab87ba76a2fc" name="Changes" comment="Moved all classes into my package">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialController.java" afterDir="false" />
+    <list default="true" id="be3b6cc3-69fd-4967-86e7-ab87ba76a2fc" name="Changes" comment="Changed access modifier of points and anchorPane to private. also points can be final">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/ColorHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialPainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialPainter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +125,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697439602965</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changed access modifier of points to private. also it can be final">
+      <option name="closed" value="true" />
+      <created>1697439724078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697439724078</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed access modifier of points and anchorPane to private. also points can be final">
+      <option name="closed" value="true" />
+      <created>1697439820293</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697439820294</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,7 +164,9 @@
     <MESSAGE value="Added color interpolation (can set start and end colors to the curve, it'll change gradually)" />
     <MESSAGE value="Renamed class from Drawer to Painter, changed curve drawing primitives from ovals to rectangles as they are faster to fill" />
     <MESSAGE value="Moved all classes into my package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved all classes into my package" />
+    <MESSAGE value="Changed access modifier of points to private. also it can be final" />
+    <MESSAGE value="Changed access modifier of points and anchorPane to private. also points can be final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed access modifier of points and anchorPane to private. also points can be final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

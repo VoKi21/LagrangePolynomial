@@ -25,26 +25,22 @@ public class LagrangePolynomialPainter {
         }
 
         final double STEP = 0.5;
-        final double WIDTH = 0.5;
         final double DISTANCE = maxX - minX;
-        final double[] colorShift = {
-                startColor.getRed() - endColor.getRed(),
-                startColor.getGreen() - endColor.getGreen(),
-                startColor.getBlue() - endColor.getBlue(),
-                startColor.getOpacity() - endColor.getOpacity()
-        };
+        final ColorHelper colorHelper = new ColorHelper(startColor, endColor);
 
+        Point2D prevPoint = new Point2D(minX, lagrangeInterpolation(points, minX));
+        Color prevColor = startColor;
         for (double x = minX; x <= maxX; x += STEP) {
             double y = lagrangeInterpolation(points, x);
             double currentPart = (x - minX) / DISTANCE;
-            Color currentColor = new Color(
-                    startColor.getRed() - colorShift[0] * currentPart,
-                    startColor.getGreen() - colorShift[1] * currentPart,
-                    startColor.getBlue() - colorShift[2] * currentPart,
-                    startColor.getOpacity() - colorShift[3] * currentPart
-            );
+            Color currentColor = colorHelper.getColorInPoint(currentPart);
             graphicsContext.setFill(currentColor);
-            graphicsContext.fillRect(x - WIDTH, y - WIDTH, WIDTH * 2, WIDTH * 2);
+            Line.lineFromTo(prevPoint, new Point2D(x, y), prevColor, currentColor, graphicsContext);
+            Line.lineFromTo(new Point2D(1000, 1000), prevPoint, prevColor, currentColor, graphicsContext);
+            System.out.println((prevPoint.getX() - x) + " " + (prevPoint.getY() - y));
+            prevPoint = new Point2D(x, y);
+            prevColor = currentColor;
+            //graphicsContext.fillRect(x - WIDTH, y - WIDTH, WIDTH * 2, WIDTH * 2);
         }
     }
 
