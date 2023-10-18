@@ -34,9 +34,9 @@ public class LagrangePolynomialPainter {
             double y = lagrangeInterpolation(points, x);
             double currentPart = (x - minX) / DISTANCE;
             Color currentColor = colorHelper.getColorInPoint(currentPart);
-            graphicsContext.setFill(currentColor);
             Line.lineFromTo(prevPoint, new Point2D(x, y), prevColor, currentColor, graphicsContext);
             prevColor = currentColor;
+            prevPoint = new Point2D(x, y);
         }
     }
 
