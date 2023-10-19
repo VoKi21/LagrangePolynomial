@@ -43,14 +43,16 @@ public class LagrangePolynomialController {
 
         final int DELETE_RADIUS = 10;
 
-        points.removeIf(point -> Math.abs(point.getX() - clickPoint.getX()) <= DELETE_RADIUS && Math.abs(point.getY() - clickPoint.getY()) <= DELETE_RADIUS);
+        points.removeIf(point ->
+                Math.abs(point.getX() - clickPoint.getX()) <=
+                        DELETE_RADIUS && Math.abs(point.getY() - clickPoint.getY()) <= DELETE_RADIUS);
     }
 
     private void redraw(GraphicsContext graphicsContext) {
         graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         final int POINT_RADIUS = 3;
-        LagrangePolynomialPainter.drawInterpolation(points, canvas.getGraphicsContext2D(), Color.BLUE, Color.RED);
+        LagrangePolynomialPainter.drawInterpolation(points, canvas.getGraphicsContext2D().getPixelWriter(), Color.BLUE, Color.RED);
         graphicsContext.setFill(Color.BLACK);
         for (Point2D point : points) {
             graphicsContext.fillOval(

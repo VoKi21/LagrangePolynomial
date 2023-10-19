@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be3b6cc3-69fd-4967-86e7-ab87ba76a2fc" name="Changes" comment="Fixed bugs, optimized code">
+    <list default="true" id="be3b6cc3-69fd-4967-86e7-ab87ba76a2fc" name="Changes" comment="method Line.normalize now expects double and returns int to avoid casting argument to int in every call">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialPainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/LagrangePolynomialPainter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/cs/cg/g8_1/kilchenko_v_p/lagrangepolynomial/Line.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697662987188</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="method Line.normalize now expects double and returns int to avoid casting argument to int in every call">
+      <option name="closed" value="true" />
+      <created>1697663371420</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697663371420</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,7 +192,8 @@
     <MESSAGE value="Changed access modifier of points and anchorPane to private. also points can be final" />
     <MESSAGE value="Created Line and Color helpers, now we draw lines instead of points" />
     <MESSAGE value="Fixed bugs, optimized code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs, optimized code" />
+    <MESSAGE value="method Line.normalize now expects double and returns int to avoid casting argument to int in every call" />
+    <option name="LAST_COMMIT_MESSAGE" value="method Line.normalize now expects double and returns int to avoid casting argument to int in every call" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

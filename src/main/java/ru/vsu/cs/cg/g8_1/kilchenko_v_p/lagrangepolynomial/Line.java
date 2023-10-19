@@ -1,14 +1,14 @@
 package ru.vsu.cs.cg.g8_1.kilchenko_v_p.lagrangepolynomial;
 
 import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.PixelWriter;
 import javafx.scene.paint.Color;
 
 public class Line {
     private static int normalize(double n) {
         return (int) Math.max(Math.min(n, 3000), -1);
     }
-    public static void lineFromTo(Point2D from, Point2D to, Color startColor, Color endColor, GraphicsContext graphicsContext) {
+    public static void lineFromTo(Point2D from, Point2D to, Color startColor, Color endColor, PixelWriter pixelWriter) {
         int x0 = normalize(from.getX());
         int y0 = normalize(from.getY());
         int x1 = normalize(to.getX());
@@ -29,7 +29,7 @@ public class Line {
         while (x0 != x1 || y0 != y1) {
             double currentPart = Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2)) / length;
             Color currentColor = colorHelper.getColorInPoint(currentPart);
-            graphicsContext.getPixelWriter().setColor(x0, y0, currentColor);
+            pixelWriter.setColor(x0, y0, currentColor);
 
             int error2 = 2 * error;
 

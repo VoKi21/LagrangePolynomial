@@ -1,7 +1,7 @@
 package ru.vsu.cs.cg.g8_1.kilchenko_v_p.lagrangepolynomial;
 
 import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.PixelWriter;
 import javafx.scene.paint.Color;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 public class LagrangePolynomialPainter {
     public static void drawInterpolation(
             List<Point2D> points,
-            GraphicsContext graphicsContext,
+            PixelWriter pixelWriter,
             Color startColor,
             Color endColor
     ) {
@@ -34,18 +34,18 @@ public class LagrangePolynomialPainter {
             double y = lagrangeInterpolation(points, x);
             double currentPart = (x - minX) / DISTANCE;
             Color currentColor = colorHelper.getColorInPoint(currentPart);
-            Line.lineFromTo(prevPoint, new Point2D(x, y), prevColor, currentColor, graphicsContext);
+            Line.lineFromTo(prevPoint, new Point2D(x, y), prevColor, currentColor, pixelWriter);
             prevColor = currentColor;
             prevPoint = new Point2D(x, y);
         }
     }
 
-    public static void drawInterpolation(List<Point2D> points, GraphicsContext graphicsContext, Color color) {
-        drawInterpolation(points, graphicsContext, color, color);
+    public static void drawInterpolation(List<Point2D> points, PixelWriter pixelWriter, Color color) {
+        drawInterpolation(points, pixelWriter, color, color);
     }
 
-    public static void drawInterpolation(List<Point2D> points, GraphicsContext graphicsContext) {
-        drawInterpolation(points, graphicsContext, Color.BLACK);
+    public static void drawInterpolation(List<Point2D> points, PixelWriter pixelWriter) {
+        drawInterpolation(points, pixelWriter, Color.BLACK);
     }
 
     private static double lagrangeInterpolation(List<Point2D> points, double x) {
