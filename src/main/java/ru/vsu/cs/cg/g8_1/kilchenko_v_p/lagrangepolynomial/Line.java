@@ -22,12 +22,11 @@ public class Line {
 
         int error = dx - dy;
 
-        // yes, in that order
-        final ColorHelper colorHelper = new ColorHelper(endColor, startColor);
+        final ColorHelper colorHelper = new ColorHelper(startColor, endColor);
         final double length = Math.sqrt(Math.pow(x1 - x0, 2) + Math.pow(y1 - y0, 2));
 
         while (x0 != x1 || y0 != y1) {
-            double currentPart = Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2)) / length;
+            double currentPart = (length - Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2))) / length;
             Color currentColor = colorHelper.getColorInPoint(currentPart);
             pixelWriter.setColor(x0, y0, currentColor);
 
